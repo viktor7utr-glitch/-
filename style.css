@@ -169,22 +169,22 @@ body {
 /* заголовок на карточке */
 .card-title {
   font-family: 'Caravan', cursive;
-  font-size: 64px;
+  font-size: 72px;   /* было ~64 */
+  margin: 10px 0 20px;
   color: #222A35;
-  margin: 10px 0 14px;
 }
 
 /* текст поздравления */
 .card-text {
-  font-family: 'Caravan', cursive;  /* ← ГЛАВНОЕ */
-  font-size: 42px;
-  line-height: 1.5;
+  font-family: 'Caravan', cursive;
+  font-size: 42px;         /* БЫЛО ~34 */
+  line-height: 1.55;
   color: #222A35;
 
-  max-width: 620px;
+  max-width: 760px;        /* шире колонка текста */
   margin: 0 auto;
 
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   opacity: 0.95;
 }
 
