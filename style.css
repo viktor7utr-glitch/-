@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Caravan';
+  src: url('fonts/Caravan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin:0;
   font-family: Arial;
