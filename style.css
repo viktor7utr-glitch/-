@@ -75,12 +75,14 @@ body {
   margin:60px;
 }
 .greeting-text {
-  font-family: 'Caravan', cursive;   /* тот же шрифт */
-  font-size: 48px;                   /* меньше, чем заголовок */
+  font-family: 'Caravan', cursive;
+  font-size: 60px;
   color: #222A35;
 
-  margin-top: 20px;                  /* расстояние от "С 8 Марта" */
+  margin-top: 20px;
   text-align: center;
 
-  opacity: 0.9;                      /* мягкость */
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  opacity: 0.9;
 }
