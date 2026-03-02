@@ -74,3 +74,13 @@ body {
 .video {
   margin:60px;
 }
+.greeting-text {
+  font-family: 'Caravan', cursive;   /* тот же шрифт */
+  font-size: 48px;                   /* меньше, чем заголовок */
+  color: #222A35;
+
+  margin-top: 20px;                  /* расстояние от "С 8 Марта" */
+  text-align: center;
+
+  opacity: 0.9;                      /* мягкость */
+}
