@@ -18,18 +18,17 @@ body {
   background-size: cover;
   background-position: center;
 
+  position: relative;   /* ДОБАВИЛИ */
+  overflow: hidden;     /* ДОБАВИЛИ: обрезает всё, что вылезает */
   display: flex;
   align-items: center;
-
-  margin-bottom: 30px;   /* ← добавили */
 }
-}
-.hero-overlay{
+.hero-overlay {
   width: 100%;
   background: rgba(255,255,255,0.55);
   backdrop-filter: blur(6px);
 
-  padding: 25px 0;   /* было 60px 0 — станет меньше */
+  padding: 20px 0;  /* если было больше — уменьшаем */
   text-align: center;
 }
 }
