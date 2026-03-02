@@ -24,9 +24,9 @@ body {
 
 .hero h1 {
   font-family: 'Caravan', cursive;
-  font-size: 170x;
+  font-size: 250px;
   color: #222A35;
-  text-shadow: 4px 4px 16px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
 .hero-text {
