@@ -70,4 +70,55 @@ body {
   transform:scale(1.1);
 }
 
+/* ===== Личные карточки ===== */
 
+.card-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(#ffeef5, #e6f7ff);
+}
+
+.back-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #222A35;
+  font-size: 18px;
+}
+
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 30px 25px;
+  text-align: center;
+}
+
+.card-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 24px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-family: 'Caravan', cursive;
+  font-size: 64px;
+  margin: 10px 0 15px;
+  color: #222A35;
+}
+
+.card-text {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #2f3a44;
+  max-width: 620px;
+  margin: 0 auto;
+}
