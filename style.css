@@ -70,21 +70,4 @@ body {
   transform:scale(1.1);
 }
 
-/* Видео */
-.video {
-  margin:60px;
-}
-.greeting-text {
-  font-family: 'Caravan', cursive;
-  font-size: 75px;
-  color: #222A35;
 
-  max-width: 480px;
-  margin: 25px auto;
-  padding: 0 20px;
-
-  text-align: center;
-  letter-spacing: 1.5px;
-  line-height: 1.4;
-  opacity: 0.9;
-}
