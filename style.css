@@ -74,3 +74,13 @@ body {
 .video {
   margin:60px;
 }
+.greeting-text {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 26px;
+  color: #2f3a44;
+
+  max-width: 700px;   /* текст не растягивается */
+  margin: 20px auto;  /* центрирование */
+
+  line-height: 1.6;   /* расстояние между строками */
+}
