@@ -76,12 +76,13 @@ body {
 }
 .greeting-text {
   font-family: 'Caravan', cursive;
-  font-size: 60px;
+  font-size: 48px;
   color: #222A35;
 
-  margin-top: 20px;
-  text-align: center;
+  max-width: 520px;     /* ← ГЛАВНОЕ */
+  margin: 25px auto;   /* центр + отступы */
 
+  text-align: center;
   letter-spacing: 1.5px;
   line-height: 1.4;
   opacity: 0.9;
