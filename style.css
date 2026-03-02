@@ -1,0 +1,48 @@
+body {
+  margin:0;
+  font-family: Arial;
+  background:#fff6f9;
+  text-align:center;
+}
+
+/* Главный блок */
+.hero {
+  height: 70vh;
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-text {
+  background: rgba(255,255,255,0.8);
+  padding:40px;
+  border-radius:20px;
+}
+
+/* Кружки */
+.circle-container {
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin:40px;
+}
+
+.circle {
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  transition:0.3s;
+}
+
+.circle:hover {
+  transform:scale(1.1);
+}
+
+/* Видео */
+.video {
+  margin:60px;
+}
