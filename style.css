@@ -176,11 +176,16 @@ body {
 
 /* текст поздравления */
 .card-text {
-  font-size: 22px;
-  line-height: 1.6;
-  color: #2f3a44;
-  max-width: 640px;
+  font-family: 'Caravan', cursive;  /* ← ГЛАВНОЕ */
+  font-size: 34px;
+  line-height: 1.5;
+  color: #222A35;
+
+  max-width: 620px;
   margin: 0 auto;
+
+  letter-spacing: 1px;
+  opacity: 0.95;
 }
 
 /* кнопки */
