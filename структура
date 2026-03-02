@@ -1,0 +1,27 @@
+/
+│
+├── index.html        ← главная страница
+├── style.css         ← стили
+├── script.js         ← логика
+│
+├── music/
+│     song.mp3
+│
+├── images/
+│     background.jpg
+│     guy1.jpg
+│     guy2.jpg
+│     guy3.jpg
+│     guy4.jpg
+│
+├── girls/
+│     girl1.jpg
+│
+├── video/
+│     congrats.mp4
+│
+└── pages/
+      guy1.html
+      guy2.html
+      guy3.html
+      guy4.html
