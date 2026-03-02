@@ -22,10 +22,13 @@ body {
   align-items: center;
 }
 .hero-overlay {
-  width: 100%;                /* ВАЖНО — на всю ширину */
-  background: rgba(255,255,255,0.65);
-  padding: 60px 0;
-  text-align: center;
+  width:100%;
+  background: rgba(255,255,255,0.55);
+
+  padding-top: 20px;     /* сверху меньше */
+  padding-bottom: 120px; /* снизу больше */
+
+  text-align:center;
 }
 .hero-overlay {
   width:100%;
