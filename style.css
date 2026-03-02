@@ -16,10 +16,22 @@ body {
   height: 70vh;
   background-image: url("images/background.jpg");
   background-size: cover;
-  background-position:center;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+}
+.hero-overlay {
+  width: 100%;                /* ВАЖНО — на всю ширину */
+  background: rgba(255,255,255,0.65);
+  padding: 60px 0;
+  text-align: center;
+}
+.hero-overlay {
+  width:100%;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  padding:60px 0;
 }
 
 .hero h1 {
