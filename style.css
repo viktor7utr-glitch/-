@@ -177,7 +177,7 @@ body {
 /* текст поздравления */
 .card-text {
   font-family: 'Caravan', cursive;  /* ← ГЛАВНОЕ */
-  font-size: 34px;
+  font-size: 42px;
   line-height: 1.5;
   color: #222A35;
 
