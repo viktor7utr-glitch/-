@@ -445,17 +445,23 @@ body {
 
 .intro-title {
   font-family: 'Caravan', cursive;
-  font-size: clamp(70px, 7vw, 110px);  /* стало крупнее */
+
+  font-size: clamp(90px, 9vw, 150px);  /* стало намного крупнее */
   color: #222A35;
-  margin-top: 25px;
+
+  margin-top: 30px;
+  letter-spacing: 3px;   /* чуть выразительнее */
 }
 
 .intro-text {
   font-family: 'Antarctic', sans-serif;
-  font-size: clamp(26px, 3vw, 40px);   /* заметно крупнее */
+
+  font-size: clamp(32px, 3.5vw, 52px); /* крупнее */
   color: #222A35;
-  margin-top: 25px;
+
+  margin-top: 30px;
   line-height: 1.35;
+  letter-spacing: 0.5px;
 }
 
 .intro-hint{
