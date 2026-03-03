@@ -1,4 +1,10 @@
 @font-face {
+  font-family: 'Antarctic';
+  src: url('fonts/Antarctic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Caravan';
   src: url('fonts/Caravan.ttf') format('truetype');
   font-weight: normal;
