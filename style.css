@@ -1,49 +1,64 @@
+/* =========================
+   ШРИФТЫ (с поддержкой iPhone)
+   ========================= */
+
+/* Antarctic: добавь Antarctic.woff2 и Antarctic.woff в /fonts/ для лучшей поддержки iOS */
 @font-face {
   font-family: 'Antarctic';
-  src: url('fonts/Antarctic.otf') format('opentype');
+  src:
+    url('fonts/Antarctic.woff2') format('woff2'),
+    url('fonts/Antarctic.woff') format('woff'),
+    url('fonts/Antarctic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Caravan';
-  src: url('fonts/Caravan.ttf') format('truetype');
+  src:
+    url('fonts/Caravan.woff2') format('woff2'),
+    url('fonts/Caravan.woff') format('woff'),
+    url('fonts/Caravan.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-}
-body {
-  margin:0;
-  font-family: Arial;
-  background:#fff6f9;
-  text-align:center;
+  font-display: swap;
 }
 
-/* Главный блок */
+/* =========================
+   ОБЩЕЕ
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff6f9;
+  text-align: center;
+}
+
+/* =========================
+   ГЛАВНЫЙ БЛОК (HERO)
+   ========================= */
+
 .hero {
   height: 70vh;
   background-image: url("images/background.jpg");
   background-size: cover;
   background-position: center;
 
-  position: relative;   /* ДОБАВИЛИ */
-  overflow: hidden;     /* ДОБАВИЛИ: обрезает всё, что вылезает */
+  position: relative;
+  overflow: hidden;
+
   display: flex;
   align-items: center;
 }
+
 .hero-overlay {
   width: 100%;
   background: rgba(255,255,255,0.55);
   backdrop-filter: blur(6px);
-
-  padding: 20px 0;  /* если было больше — уменьшаем */
+  padding: 20px 0;
   text-align: center;
-}
-}
-.hero-overlay {
-  width:100%;
-  background: rgba(255,255,255,0.55);
-  backdrop-filter: blur(6px);
-  padding:60px 0;
 }
 
 .hero h1 {
@@ -51,20 +66,44 @@ body {
   font-size: 320px;
   color: #800000;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+  margin: 0;
 }
 
-.hero-text {
-  background: rgba(255,255,255,0.8);
-  padding:40px;
-  border-radius:20px;
+/* Текст под заголовком на главной */
+.greeting-text {
+  font-family: 'Caravan', cursive;
+  font-size: 48px;
+  color: #222A35;
+
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 0 20px;
+
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
-/* Кружки */
+/* =========================
+   БЛОК С КРУЖКАМИ
+   ========================= */
+
+.guys h2 {
+  font-family: 'Caravan', cursive;
+  font-size: 64px;
+  color: #222A35;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
 .circle-container {
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin:40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px;
+  flex-wrap: wrap; /* чтобы на узких экранах переносилось красиво */
 }
 
 .circle {
@@ -82,63 +121,9 @@ body {
   box-shadow: 0 0 30px rgba(255, 182, 193, 0.6);
 }
 
-/* ===== Личные карточки ===== */
-
-.card-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background: linear-gradient(#ffeef5, #e6f7ff);
-}
-
-.back-link {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  text-decoration: none;
-  color: #222A35;
-  font-size: 18px;
-}
-
-.card {
-  width: 100%;
-  max-width: 1100px;      /* было меньше — теперь шире */
-  background: rgba(255,255,255,0.95);
-  border-radius: 28px;
-
-  padding: 35px 45px;     /* немного плотнее */
-  text-align: center;
-}
-
-.card-photo {
-  width: 260px;
-  height: 260px;
-  border-radius: 24px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-
-.card-title {
-  font-family: 'Caravan', cursive;
-  font-size: 64px;
-  margin: 10px 0 15px;
-  color: #222A35;
-}
-
-.card-text {
-  font-family: 'Antarctic', sans-serif !important;
-  font-size: 32px;       /* немного крупнее */
-  line-height: 1.45;     /* было 1.7 — теперь плотнее */
-  color: #222A35;
-
-  max-width: 900px;      /* текст может быть шире */
-  margin: 0 auto;
-
-  letter-spacing: 0.3px;
-}
-/* ===== ЛИЧНЫЕ КАРТОЧКИ (поверх всего) ===== */
+/* =========================
+   КАРТОЧКИ (поверх всего)
+   ========================= */
 
 .card-page {
   min-height: 100vh;
@@ -148,7 +133,7 @@ body {
 /* затемнённый фон */
 .card-overlay {
   position: fixed;
-  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  inset: 0;
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(3px);
   z-index: 9999;
@@ -156,30 +141,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 20px;
 }
 
-/* сама карточка */
+/* бумажная карточка */
 .card {
   width: 100%;
   max-width: 1100px;
 
-  /* бумага */
-  background: #fffaf0; /* тёплый оттенок бумаги */
+  background: #fffaf0;
   border-radius: 28px;
   padding: 35px 45px;
   text-align: center;
 
-  /* “бумажная” глубина */
   box-shadow:
     0 18px 45px rgba(0,0,0,0.18),
     inset 0 0 0 1px rgba(34,42,53,0.08);
 
   position: relative;
+  z-index: 10000;
 }
 
-/* фото поздравляющего */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 2px rgba(34,42,53,0.06);
+  pointer-events: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+
+  background-image: radial-gradient(rgba(34,42,53,0.06) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.18;
+
+  pointer-events: none;
+}
+
 .card-photo {
   width: 260px;
   height: 260px;
@@ -189,49 +193,26 @@ body {
   margin: 0 auto 18px;
 }
 
-/* заголовок на карточке */
 .card-title {
   font-family: 'Caravan', cursive;
-  font-size: 72px;   /* было ~64 */
+  font-size: 72px;
   margin: 10px 0 20px;
   color: #222A35;
 }
 
-/* текст поздравления */
+/* текст поздравления — читаемый шрифт Antarctic */
 .card-text {
-  font-family: 'Caravan', cursive;
-  font-size: 42px;         /* БЫЛО ~34 */
-  line-height: 1.55;
+  font-family: 'Antarctic', sans-serif;
+  font-size: 32px;
+  line-height: 1.45;
   color: #222A35;
 
-  max-width: 760px;        /* шире колонка текста */
+  max-width: 900px;
   margin: 0 auto;
+  letter-spacing: 0.3px;
 
-  letter-spacing: 1.2px;
-  opacity: 0.95;
-}
-
-/* кнопки */
-.card-actions {
-  margin-top: 18px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  background: #222A35;
-  color: white;
-}
-
-.btn.secondary {
-  background: rgba(34,42,53,0.12);
-  color: #222A35;
+  position: relative;
+  z-index: 1;
 }
 
 /* крестик закрыть */
@@ -254,7 +235,9 @@ body {
   font-size: 22px;
 
   transition: all 0.3s ease;
+  z-index: 10001;
 }
+
 .close-x:hover {
   background: #ff6b81;
   color: white;
@@ -269,17 +252,10 @@ body {
 .close-x:hover {
   color: transparent;
 }
-.guys h2 {
-  font-family: 'Caravan', cursive;
-  font-size: 64px;
-  color: #222A35;
 
-  margin-top: 40px;
-  margin-bottom: 30px;
-
-  letter-spacing: 2px;
-}
-/* ===== Кнопка музыки ===== */
+/* =========================
+   КНОПКА МУЗЫКИ
+   ========================= */
 
 .music-btn {
   position: fixed;
@@ -311,12 +287,12 @@ body {
   background: #ff6b81;
   color: white;
 }
+
 /* =========================
-   АДАПТИВ ДЛЯ ПЛАНШЕТОВ/МОБИЛОК
+   АДАПТИВ
    ========================= */
 
 @media (max-width: 900px) {
-  /* карточки */
   .card {
     max-width: 92vw;
     padding: 26px 20px;
@@ -339,10 +315,8 @@ body {
     max-width: 86vw;
   }
 
-  /* кружки */
   .circle-container {
     gap: 18px;
-    flex-wrap: wrap;
     margin: 20px;
   }
 
@@ -351,12 +325,10 @@ body {
     height: 140px;
   }
 
-  /* заголовок блока */
   .guys h2 {
     font-size: 46px;
   }
 
-  /* кнопка музыки */
   .music-btn {
     top: 12px;
     right: 12px;
@@ -367,7 +339,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  /* главный экран */
   .hero {
     height: 62vh;
   }
@@ -377,7 +348,7 @@ body {
   }
 
   .hero h1 {
-    font-size: 92px; /* если у тебя там Caravan */
+    font-size: 92px;
   }
 
   .greeting-text {
@@ -386,7 +357,6 @@ body {
     padding: 0 14px;
   }
 
-  /* карточки */
   .card-photo {
     width: 180px;
     height: 180px;
@@ -401,7 +371,6 @@ body {
     line-height: 1.32;
   }
 
-  /* кружки */
   .circle {
     width: 120px;
     height: 120px;
