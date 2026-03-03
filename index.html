@@ -13,21 +13,22 @@
 <audio id="mainMusic" autoplay loop>
   <source src="music/main.mp3" type="audio/mpeg">
 </audio>
+
 <!-- 🔊 Кнопка управления музыкой -->
 <button id="musicToggle" class="music-btn">🔊</button>
-<!--  Главный блок -->
-<section class="hero">
 
+<!-- 🌸 Главный блок -->
+<section class="hero">
   <div class="hero-overlay">
       <h1>С 8 Марта!</h1>
 
       <p class="greeting-text">
         Дорогие девушки, поздравляем вас с праздником!
         <br><br>
-        Ниже — слова, которые идут прямо от души, чтобы сделать этот день ещё теплее.
+        Ниже — слова, которые идут прямо от души,
+        чтобы сделать этот день ещё теплее.
       </p>
   </div>
-
 </section>
 
 <!-- 👨 Мужской коллектив -->
@@ -56,15 +57,29 @@
 </div>
 </section>
 
-<!-- ✅ Гарантируем запуск музыки после первого клика (если браузер блокирует autoplay) -->
+<!-- 🔊 Скрипт управления музыкой -->
 <script>
+const music = document.getElementById("mainMusic");
+const button = document.getElementById("musicToggle");
+
+// запуск после первого клика (если браузер блокирует autoplay)
 document.addEventListener("click", function () {
-  const music = document.getElementById("mainMusic");
-  if (music && music.paused) {
-    music.volume = 0.4;   // можно убрать строку, если не нужно
+  if (music.paused) {
+    music.volume = 0.4;
     music.play();
   }
 }, { once: true });
+
+// переключение кнопкой
+button.addEventListener("click", function () {
+  if (music.paused) {
+    music.play();
+    button.textContent = "🔊";
+  } else {
+    music.pause();
+    button.textContent = "🔇";
+  }
+});
 </script>
 
 </body>
