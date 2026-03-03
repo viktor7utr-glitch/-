@@ -3,6 +3,7 @@
   src: url('fonts/Antarctic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Caravan';
@@ -127,7 +128,7 @@ body {
 }
 
 .card-text {
-  font-family: 'Antarctic', sans-serif;
+  font-family: 'Antarctic', sans-serif !important;
   font-size: 28px;
   line-height: 1.7;
   color: #222A35;
@@ -135,7 +136,7 @@ body {
   max-width: 760px;
   margin: 0 auto;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 /* ===== ЛИЧНЫЕ КАРТОЧКИ (поверх всего) ===== */
 
