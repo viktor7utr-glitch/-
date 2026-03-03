@@ -52,53 +52,63 @@
 
   <!-- ✅ ЕДИНСТВЕННЫЙ СКРИПТ: конверт + музыка -->
   <script>
-    const music = document.getElementById("mainMusic");
-    const button = document.getElementById("musicToggle");
-    const overlay = document.getElementById("introOverlay");
-    const letter = document.getElementById("introLetter");
+const music = document.getElementById("mainMusic");
+const button = document.getElementById("musicToggle");
+const overlay = document.getElementById("introOverlay");
+const letter = document.getElementById("introLetter");
 
-    function openSite() {
-      if (!overlay || !letter) return;
+/* ===== ПРОВЕРКА: открывали ли уже конверт ===== */
+if (sessionStorage.getItem("introOpened") === "true") {
+  if (overlay) overlay.remove();
 
-      // красивое исчезновение: "улёт" письма + fade фона
-      letter.classList.add("flyout");
-      overlay.classList.add("fadeout");
+  // можно автоматически запустить музыку, если хочешь:
+  if (music) {
+    music.volume = 0.4;
+    music.play().catch(()=>{});
+  }
+}
 
-      // запуск музыки (клик пользователя → браузер разрешает)
-      if (music) {
-        music.volume = 0.4;
-        music.play().catch(() => {});
-      }
+/* ===== ОТКРЫТИЕ КОНВЕРТА ===== */
+function openSite() {
+  if (!overlay || !letter) return;
 
-      if (button) button.textContent = "🔊";
+  // запоминаем, что интро уже открыли
+  sessionStorage.setItem("introOpened", "true");
 
-      // удалить overlay после анимации
-      setTimeout(() => {
-        overlay.remove();
-      }, 650);
+  // анимация
+  letter.classList.add("flyout");
+  overlay.classList.add("fadeout");
+
+  // запуск музыки
+  if (music) {
+    music.volume = 0.4;
+    music.play().catch(()=>{});
+  }
+
+  if (button) button.textContent = "🔊";
+
+  setTimeout(() => {
+    overlay.remove();
+  }, 650);
+}
+
+if (letter) {
+  letter.addEventListener("click", openSite);
+  letter.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") openSite();
+  });
+}
+
+/* ===== КНОПКА МУЗЫКИ ===== */
+if (button && music) {
+  button.addEventListener("click", function () {
+    if (music.paused) {
+      music.play().catch(()=>{});
+      button.textContent = "🔊";
+    } else {
+      music.pause();
+      button.textContent = "🔇";
     }
-
-    // открыть по клику/Enter
-    if (letter) {
-      letter.addEventListener("click", openSite);
-      letter.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") openSite();
-      });
-    }
-
-    // кнопка музыки
-    if (button && music) {
-      button.addEventListener("click", function () {
-        if (music.paused) {
-          music.play().catch(() => {});
-          button.textContent = "🔊";
-        } else {
-          music.pause();
-          button.textContent = "🔇";
-        }
-      });
-    }
-  </script>
-
-</body>
-</html>
+  });
+}
+</script>
