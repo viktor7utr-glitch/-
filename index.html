@@ -18,7 +18,43 @@
     <div class="intro-hint">(музыка включится после нажатия)</div>
   </div>
 </div>
-<!-- 🎵 Музыка на главной -->
+<script>
+(function () {
+  const overlay = document.getElementById("introOverlay");
+  const letter = document.getElementById("introLetter");
+  const music = document.getElementById("mainMusic");
+  const button = document.getElementById("musicToggle");
+
+  function openSite() {
+    // 1) прячем конверт с анимацией
+    letter.classList.add("hide");
+    overlay.classList.add("hide");
+
+    // 2) запускаем музыку (это клик пользователя → браузер разрешает)
+    if (music) {
+      music.volume = 0.4;
+      music.play().catch(()=>{});
+    }
+
+    // 3) обновим иконку кнопки (если она есть)
+    if (button) button.textContent = "🔊";
+
+    // 4) удалим overlay из DOM после анимации
+    setTimeout(() => {
+      if (overlay) overlay.remove();
+    }, 400);
+  }
+
+  if (letter) {
+    letter.addEventListener("click", openSite);
+    // чтобы работало с клавиатуры (Enter)
+    letter.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") openSite();
+    });
+  }
+})();
+</script>
+  <!-- 🎵 Музыка на главной -->
 <audio id="mainMusic" autoplay loop>
   <source src="music/main.mp3" type="audio/mpeg">
 </audio>
