@@ -104,11 +104,11 @@ body {
 
 .card {
   width: 100%;
-  max-width: 920px;        /* БЫЛО ~780 */
-  background: rgba(255,255,255,0.92);
+  max-width: 1100px;      /* было меньше — теперь шире */
+  background: rgba(255,255,255,0.95);
   border-radius: 28px;
 
-  padding: 40px 36px;      /* больше воздуха */
+  padding: 35px 45px;     /* немного плотнее */
   text-align: center;
 }
 
@@ -129,14 +129,14 @@ body {
 
 .card-text {
   font-family: 'Antarctic', sans-serif !important;
-  font-size: 28px;
-  line-height: 1.7;
+  font-size: 32px;       /* немного крупнее */
+  line-height: 1.45;     /* было 1.7 — теперь плотнее */
   color: #222A35;
 
-  max-width: 760px;
+  max-width: 900px;      /* текст может быть шире */
   margin: 0 auto;
 
-  letter-spacing: 0.4px;
+  letter-spacing: 0.3px;
 }
 /* ===== ЛИЧНЫЕ КАРТОЧКИ (поверх всего) ===== */
 
