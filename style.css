@@ -429,32 +429,32 @@ body {
               inset 0 0 0 1px rgba(34,42,53,0.12);
 }
 
-.intro-stamp{
+.intro-stamp {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 20px;
+  right: 20px;
 
-  padding: 8px 12px;
-  border-radius: 14px;
+  padding: 10px 16px;
+  border-radius: 18px;
 
   font-family: 'Caravan', cursive;
-  font-size: 34px;
-  background: rgba(255, 107, 129, 0.14);
+  font-size: 42px;   /* крупнее */
+  background: rgba(255, 107, 129, 0.18);
   color: #222A35;
 }
 
-.intro-title{
+.intro-title {
   font-family: 'Caravan', cursive;
-  font-size: clamp(52px, 6vw, 84px);
+  font-size: clamp(70px, 7vw, 110px);  /* стало крупнее */
   color: #222A35;
-  margin-top: 18px;
+  margin-top: 25px;
 }
 
-.intro-text{
+.intro-text {
   font-family: 'Antarctic', sans-serif;
-  font-size: clamp(18px, 2.5vw, 28px);
+  font-size: clamp(26px, 3vw, 40px);   /* заметно крупнее */
   color: #222A35;
-  margin-top: 12px;
+  margin-top: 25px;
   line-height: 1.35;
 }
 
