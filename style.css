@@ -465,18 +465,28 @@ body {
 }
 
 /* анимация исчезновения */
-.intro-overlay.hide{
-  animation: introFade 0.35s ease forwards;
+/* ===== Анимации конверта ===== */
+
+/* фон плавно исчезает */
+.intro-overlay.fadeout {
+  animation: introFadeOut 0.65s ease forwards;
 }
 
-.intro-letter.hide{
-  animation: letterOut 0.35s ease forwards;
+/* письмо улетает вверх */
+.intro-letter.flyout {
+  animation: letterFlyOut 0.65s cubic-bezier(.2,.9,.2,1) forwards;
 }
 
-@keyframes introFade{
-  to { opacity: 0; visibility: hidden; }
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
-@keyframes letterOut{
-  to { transform: translateY(12px) scale(0.98); opacity: 0; }
+@keyframes letterFlyOut {
+  to {
+    transform: translateY(-120px) rotate(-6deg) scale(0.98);
+    opacity: 0;
+  }
 }
