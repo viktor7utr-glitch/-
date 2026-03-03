@@ -61,15 +61,18 @@ body {
 }
 
 .circle {
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  object-fit:cover;
-  transition:0.3s;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 
 .circle:hover {
-  transform:scale(1.1);
+  transform: scale(1.12);
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.6);
 }
 
 /* ===== Личные карточки ===== */
