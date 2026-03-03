@@ -226,3 +226,13 @@ body {
   color: #222A35;
   font-size: 24px;
 }
+.guys h2 {
+  font-family: 'Caravan', cursive;
+  font-size: 64px;
+  color: #222A35;
+
+  margin-top: 40px;
+  margin-bottom: 30px;
+
+  letter-spacing: 2px;
+}
