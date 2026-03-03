@@ -1,129 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>С 8 Марта</title>
+  <title>С 8 Марта</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<!-- ✉️ Интро-конверт -->
-<div id="introOverlay" class="intro-overlay">
-  <div id="introLetter" class="intro-letter" role="button" tabindex="0">
-    <div class="intro-stamp">8 марта</div>
-    <div class="intro-title">Послание</div>
-    <div class="intro-text">Нажми на послание, чтобы открыть поздравление 💌</div>
-    <div class="intro-hint">(музыка включится после нажатия)</div>
-  </div>
-</div>
-<script>
-(function () {
-  const overlay = document.getElementById("introOverlay");
-  const letter = document.getElementById("introLetter");
-  const music = document.getElementById("mainMusic");
-  const button = document.getElementById("musicToggle");
 
-  function openSite() {
-    // 1) прячем конверт с анимацией
-    letter.classList.add("hide");
-    overlay.classList.add("hide");
-
-    // 2) запускаем музыку (это клик пользователя → браузер разрешает)
-    if (music) {
-      music.volume = 0.4;
-      music.play().catch(()=>{});
-    }
-
-    // 3) обновим иконку кнопки (если она есть)
-    if (button) button.textContent = "🔊";
-
-    // 4) удалим overlay из DOM после анимации
-    setTimeout(() => {
-      if (overlay) overlay.remove();
-    }, 400);
-  }
-
-  if (letter) {
-    letter.addEventListener("click", openSite);
-    // чтобы работало с клавиатуры (Enter)
-    letter.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") openSite();
-    });
-  }
-})();
-</script>
   <!-- 🎵 Музыка на главной -->
-<audio id="mainMusic" autoplay loop>
-  <source src="music/main.mp3" type="audio/mpeg">
-</audio>
+  <audio id="mainMusic" autoplay loop>
+    <source src="music/main.mp3" type="audio/mpeg">
+  </audio>
 
-<!-- 🔊 Кнопка управления музыкой -->
-<button id="musicToggle" class="music-btn">🔊</button>
+  <!-- 🔊 Кнопка управления музыкой -->
+  <button id="musicToggle" class="music-btn">🔊</button>
 
-<!-- 🌸 Главный блок -->
-<section class="hero">
-  <div class="hero-overlay">
+  <!-- ✉️ Интро-конверт -->
+  <div id="introOverlay" class="intro-overlay">
+    <div id="introLetter" class="intro-letter" role="button" tabindex="0">
+      <div class="intro-stamp">8 марта</div>
+      <div class="intro-title">Послание</div>
+      <div class="intro-text">Нажми на послание, чтобы открыть поздравление 💌</div>
+      <div class="intro-hint">(музыка включится после нажатия)</div>
+    </div>
+  </div>
+
+  <!-- 🌸 Главный блок -->
+  <section class="hero">
+    <div class="hero-overlay">
       <h1>С 8 Марта!</h1>
 
       <p class="greeting-text">
         Дорогие девушки, поздравляем вас с праздником!
-       
       </p>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- 👨 Мужской коллектив -->
-<section class="guys">
+  <!-- 👨 Мужской коллектив -->
+  <section class="guys">
+    <h2>Личные поздравления</h2>
 
-<h2>Личные поздравления</h2>
+    <div class="circle-container">
+      <a href="pages/guy1.html"><img src="images/guy1.jpg" class="circle" alt="Виктор"></a>
+      <a href="pages/guy2.html"><img src="images/guy2.jpg" class="circle" alt="Слава"></a>
+      <a href="pages/guy3.html"><img src="images/guy3.jpg" class="circle" alt="Дима"></a>
+      <a href="pages/guy4.html"><img src="images/guy4.jpg" class="circle" alt="Стас"></a>
+    </div>
+  </section>
 
-<div class="circle-container">
+  <!-- ✅ ЕДИНСТВЕННЫЙ СКРИПТ: конверт + музыка -->
+  <script>
+    const music = document.getElementById("mainMusic");
+    const button = document.getElementById("musicToggle");
+    const overlay = document.getElementById("introOverlay");
+    const letter = document.getElementById("introLetter");
 
-<a href="pages/guy1.html">
-<img src="images/guy1.jpg" class="circle">
-</a>
+    function openSite() {
+      if (!overlay || !letter) return;
 
-<a href="pages/guy2.html">
-<img src="images/guy2.jpg" class="circle">
-</a>
+      // красивое исчезновение: "улёт" письма + fade фона
+      letter.classList.add("flyout");
+      overlay.classList.add("fadeout");
 
-<a href="pages/guy3.html">
-<img src="images/guy3.jpg" class="circle">
-</a>
+      // запуск музыки (клик пользователя → браузер разрешает)
+      if (music) {
+        music.volume = 0.4;
+        music.play().catch(() => {});
+      }
 
-<a href="pages/guy4.html">
-<img src="images/guy4.jpg" class="circle">
-</a>
+      if (button) button.textContent = "🔊";
 
-</div>
-</section>
+      // удалить overlay после анимации
+      setTimeout(() => {
+        overlay.remove();
+      }, 650);
+    }
 
-<!-- 🔊 Скрипт управления музыкой -->
-<script>
-const music = document.getElementById("mainMusic");
-const button = document.getElementById("musicToggle");
+    // открыть по клику/Enter
+    if (letter) {
+      letter.addEventListener("click", openSite);
+      letter.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") openSite();
+      });
+    }
 
-// запуск после первого клика (если браузер блокирует autoplay)
-document.addEventListener("click", function () {
-  if (music.paused) {
-    music.volume = 0.4;
-    music.play();
-  }
-}, { once: true });
-
-// переключение кнопкой
-button.addEventListener("click", function () {
-  if (music.paused) {
-    music.play();
-    button.textContent = "🔊";
-  } else {
-    music.pause();
-    button.textContent = "🔇";
-  }
-});
-</script>
+    // кнопка музыки
+    if (button && music) {
+      button.addEventListener("click", function () {
+        if (music.paused) {
+          music.play().catch(() => {});
+          button.textContent = "🔊";
+        } else {
+          music.pause();
+          button.textContent = "🔇";
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
