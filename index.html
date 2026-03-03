@@ -2,28 +2,28 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>С 8 Марта </title>
+<title>С 8 Марта</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- 🎵 Музыка -->
-<audio id="music" autoplay loop>
-  <source src="music/song.mp3" type="audio/mpeg">
+<!-- 🎵 Музыка на главной -->
+<audio id="mainMusic" autoplay loop>
+  <source src="music/main.mp3" type="audio/mpeg">
 </audio>
 
 <!--  Главный блок -->
 <section class="hero">
 
   <div class="hero-overlay">
-      <h1> С 8 Марта!</h1>
+      <h1>С 8 Марта!</h1>
 
       <p class="greeting-text">
         Дорогие девушки, поздравляем вас с праздником!
-
-Ниже — слова, которые идут прямо от души, чтобы сделать этот день ещё теплее.
+        <br><br>
+        Ниже — слова, которые идут прямо от души, чтобы сделать этот день ещё теплее.
       </p>
   </div>
 
@@ -55,4 +55,16 @@
 </div>
 </section>
 
+<!-- ✅ Гарантируем запуск музыки после первого клика (если браузер блокирует autoplay) -->
+<script>
+document.addEventListener("click", function () {
+  const music = document.getElementById("mainMusic");
+  if (music && music.paused) {
+    music.volume = 0.4;   // можно убрать строку, если не нужно
+    music.play();
+  }
+}, { once: true });
+</script>
 
+</body>
+</html>
