@@ -311,3 +311,103 @@ body {
   background: #ff6b81;
   color: white;
 }
+/* =========================
+   АДАПТИВ ДЛЯ ПЛАНШЕТОВ/МОБИЛОК
+   ========================= */
+
+@media (max-width: 900px) {
+  /* карточки */
+  .card {
+    max-width: 92vw;
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  .card-photo {
+    width: 210px;
+    height: 210px;
+    border-radius: 18px;
+  }
+
+  .card-title {
+    font-size: 46px;
+  }
+
+  .card-text {
+    font-size: 24px;
+    line-height: 1.35;
+    max-width: 86vw;
+  }
+
+  /* кружки */
+  .circle-container {
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* заголовок блока */
+  .guys h2 {
+    font-size: 46px;
+  }
+
+  /* кнопка музыки */
+  .music-btn {
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* главный экран */
+  .hero {
+    height: 62vh;
+  }
+
+  .hero-overlay {
+    padding: 16px 0;
+  }
+
+  .hero h1 {
+    font-size: 92px; /* если у тебя там Caravan */
+  }
+
+  .greeting-text {
+    font-size: 22px;
+    max-width: 88vw;
+    padding: 0 14px;
+  }
+
+  /* карточки */
+  .card-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 40px;
+  }
+
+  .card-text {
+    font-size: 22px;
+    line-height: 1.32;
+  }
+
+  /* кружки */
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .guys h2 {
+    font-size: 40px;
+  }
+}
