@@ -66,24 +66,25 @@ body {
   font-size: 320px;
   color: #800000;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+
   margin: 0;
+  margin-bottom: 25px; /* ДОБАВЛЕНО: даём место тексту снизу */
 }
 
 /* Текст под заголовком на главной */
 .greeting-text {
   font-family: 'Caravan', cursive;
 
-  font-size: 56px;        /* немного крупнее */
+  font-size: 60px;         /* ДОБАВЛЕНО: чуть крупнее */
   color: #222A35;
 
-  max-width: 720px;       /* было меньше — теперь шире */
-  margin: 60px auto 0;    /* опускаем вниз */
+  max-width: 780px;        /* ДОБАВЛЕНО: немного шире */
+  margin: 120px auto 0;    /* ДОБАВЛЕНО: сильно опускаем вниз */
   padding: 0 20px;
 
   text-align: center;
-  letter-spacing: 1.2px;
-  line-height: 1.35;
-
+  letter-spacing: 1.1px;  /* чуть аккуратнее */
+  line-height: 1.3;       /* чуть плотнее */
   opacity: 0.95;
 }
 
