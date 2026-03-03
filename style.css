@@ -72,17 +72,19 @@ body {
 /* Текст под заголовком на главной */
 .greeting-text {
   font-family: 'Caravan', cursive;
-  font-size: 48px;
+
+  font-size: 56px;        /* немного крупнее */
   color: #222A35;
 
-  max-width: 520px;
-  margin: 25px auto;
+  max-width: 720px;       /* было меньше — теперь шире */
+  margin: 60px auto 0;    /* опускаем вниз */
   padding: 0 20px;
 
   text-align: center;
-  letter-spacing: 1.5px;
-  line-height: 1.4;
-  opacity: 0.9;
+  letter-spacing: 1.2px;
+  line-height: 1.35;
+
+  opacity: 0.95;
 }
 
 /* =========================
