@@ -229,15 +229,35 @@ body {
   position: absolute;
   top: 18px;
   right: 18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-decoration: none;
+  border-radius: 50%;
+
   background: rgba(255,255,255,0.9);
   color: #222A35;
-  font-size: 24px;
+  font-size: 22px;
+
+  transition: all 0.3s ease;
+}
+.close-x:hover {
+  background: #ff6b81;
+  color: white;
+}
+
+/* заменяем символ при наведении */
+.close-x:hover::before {
+  content: "❤";
+  font-size: 22px;
+}
+
+.close-x:hover {
+  color: transparent;
 }
 .guys h2 {
   font-family: 'Caravan', cursive;
