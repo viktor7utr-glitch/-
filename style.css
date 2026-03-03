@@ -270,3 +270,35 @@ body {
 
   letter-spacing: 2px;
 }
+/* ===== Кнопка музыки ===== */
+
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255,255,255,0.9);
+  font-size: 22px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: #ff6b81;
+  color: white;
+}
