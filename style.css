@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Antarctic';
-  src: url('fonts/Antarctic.ttf') format('truetype');
+  src: url('fonts/Antarctic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
