@@ -206,13 +206,15 @@ body {
 /* текст поздравления — читаемый шрифт Antarctic */
 .card-text {
   font-family: 'Antarctic', sans-serif;
-  font-size: 32px;
-  line-height: 1.45;
+
+  font-size: clamp(28px, 2.6vw, 42px);  /* больше и адаптивно */
+  line-height: 1.38;                    /* чуть плотнее */
   color: #222A35;
 
-  max-width: 900px;
+  max-width: min(950px, 92vw);
   margin: 0 auto;
-  letter-spacing: 0.3px;
+
+  letter-spacing: 0.4px;
 
   position: relative;
   z-index: 1;
