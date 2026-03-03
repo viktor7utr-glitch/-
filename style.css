@@ -207,7 +207,7 @@ body {
 .card-text {
   font-family: 'Antarctic', sans-serif;
 
-  font-size: clamp(28px, 2.6vw, 42px);  /* больше и адаптивно */
+  font-size: clamp(32px, 3.2vw, 56px);  /* больше и адаптивно */
   line-height: 1.38;                    /* чуть плотнее */
   color: #222A35;
 
